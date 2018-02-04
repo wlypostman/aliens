@@ -55,8 +55,7 @@ def update_bullet(bullets):
 
 
 def create_fleet(ai_settings, screen, aliens):
-    number_x = get_number_x(ai_settings, screen)
-
+    number_x = get_number_x(ai_settings, screen)   
     for number  in range(number_x):
         create_alien(ai_settings,screen, aliens, number)
 
