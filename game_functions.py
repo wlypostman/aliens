@@ -54,10 +54,13 @@ def update_bullet(bullets):
             bullets.remove(bullet)
 
 
-def create_fleet(ai_settings, screen, aliens):
-    number_x = get_number_x(ai_settings, screen)   
-    for number  in range(number_x):
-        create_alien(ai_settings,screen, aliens, number)
+def create_fleet(ai_settings, screen, aliens ,ship):
+    alien = Alien(screen, ai_settings)
+    number_x = get_number_x(ai_settings, screen)
+    rows = get_number_rows(ai_settings, ship.rect.height, alien.rect.height)
+    for row in range(rows):
+        for number in range(number_x):
+            create_alien(ai_settings, screen, aliens, number, row)
 
 
 def get_number_x(ai_settings, screen):
@@ -67,8 +70,18 @@ def get_number_x(ai_settings, screen):
     number_x = int(space_x / (2 * alien_width))
     return number_x
 
-def create_alien(ai_settings,screen, aliens, number):
+
+def create_alien(ai_settings, screen, aliens, number,rows):
     alien = Alien(screen, ai_settings)
     alien_width = alien.rect.width
+    alien_height = alien.rect.height
     alien.rect.x = alien_width + 2 * alien_width * number
+    alien.rect.y = alien_height + 2 * alien_height * rows
     aliens.add(alien)
+
+def get_number_rows(ai_settings, ship_height, alien_height):
+    space_y = ai_settings.screen_height - (3 * alien_height) - ship_height
+    number_y = space_y / (2 * alien_height)
+    # print(number_y)
+    return int(number_y)
+
