@@ -14,9 +14,11 @@ class Alien(Sprite):
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        self.y = float(self.rect.y)
+        self.x = float(self.rect.x)
 
     def blit_me(self):
         self.screen(self.image, self.rect)
 
-        
+    def update(self):
+        self.x -= self.ai_settings.alien_speed_factor
+        self.rect.x = self.x

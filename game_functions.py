@@ -85,3 +85,5 @@ def get_number_rows(ai_settings, ship_height, alien_height):
     # print(number_y)
     return int(number_y)
 
+def alien_update(aliens):
+    aliens.update()
