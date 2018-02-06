@@ -7,7 +7,7 @@ class Ship():
         self.screen = screen
         self.ai_settings = ai_settings
 
-        self.image = pygame.image.load('images/123.png')
+        self.image = pygame.image.load('images/1231.png')
         self.rect = self.image.get_rect()
         self.screen_rect = self.screen.get_rect()
 

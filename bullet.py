@@ -3,6 +3,7 @@ from pygame.sprite import Sprite
 
 
 class Bullet(Sprite):
+
     def __init__(self, screen, ship, ai_settings):
         super().__init__()
         self.screen = screen
@@ -24,4 +25,3 @@ class Bullet(Sprite):
     def update(self):
         self.y -= self.speed
         self.rect.y = self.y
-        

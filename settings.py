@@ -17,6 +17,7 @@ class Settings():
         self.bullet_allow = 3
 
         #alien
-        
+        self.alien_speed_factor = 1
+
 
 
